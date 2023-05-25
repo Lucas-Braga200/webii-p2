@@ -1,0 +1,26 @@
+{
+  "name": "webii-p2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas-Braga200/webii-p2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas-Braga200/webii-p2/issues"
+  },
+  "homepage": "https://github.com/Lucas-Braga200/webii-p2#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-handlebars": "^7.0.7",
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.6.1"
+  }
+}
