@@ -1,1 +1,47 @@
-{{> content}}
+{{!< main.hbs }}
+
+{{#contentFor "body"}}
+  <div class="w-100 h-100 d-flex justify-content-center align-items-center bg-muted-900">
+    <div class="w-900px">
+      <div class="mb-5">
+        <h1 class="text-center text-purple-500 fw-bold fs-1">Quiztionário</h1>
+      </div>
+      <div class="row gx-5">
+        <div class="col">
+          <div class="card-player p-5 rounded border text-purple-500 bg-muted-800 border-muted-600 cursor-pointer">
+            <div class="d-flex flex-column align-items-center w-100">
+              <div class="w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border-purple-600 border border-4">
+                <i class="fa-solid fa-user fa-3x"></i>
+              </div>
+              <span class="fw-bold mt-2 fs-3">
+                Player 1
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-player p-5 rounded border text-purple-500 bg-muted-800 border-muted-600 cursor-pointer">
+            <div class="d-flex flex-column align-items-center w-100">
+              <div class="w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border-purple-600 border border-4">
+                <i class="fa-solid fa-user fa-3x"></i>
+              </div>
+              <span class="fw-bold mt-2 fs-3">
+                Player 2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-100 text-center mt-5 text-white">
+        <h2>
+          <div class="spinner-border text-purple-500" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <span>
+            Aguardando...
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+{{/contentFor}}

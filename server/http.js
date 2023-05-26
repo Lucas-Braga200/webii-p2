@@ -3,18 +3,20 @@ const { engine } = require('express-handlebars');
 const http = require('http');
 const path = require('path');
 const { Server } = require('socket.io');
+const helpers = require('./utils/helpers');
 
 const indexRouter = require('../routes/index.js');
 
 const app = express();
 
 // Static Files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Set Template Engine
 app.engine('hbs', engine({
   layoutsDir: path.join(__dirname, '../views', 'layouts'),
   extname: 'hbs',
+  helpers: helpers,
 }));
 app.set('view engine', 'hbs');
 
