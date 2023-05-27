@@ -315,8 +315,135 @@ html, body {
   cursor: pointer;
 }
 
+.title-label {
+  font-size: 3rem;
+  font-weight: bolder;
+  background: var(--color-purple-500);
+  background: linear-gradient(to bottom, var(--color-purple-500) 0%, var(--color-violet-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Albert Sans';
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.select-label {
+  color: var(--color-muted-400);
+  font-size: 0.9rem;
+  letter-spacing: 1.4px;
+}
+
+.subtitle-label {
+  color: var(--color-muted-300);
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  font-family: 'Albert Sans';
+}
+
+
+/* Card Player */
+.card-player {
+  border-color: var(--color-muted-600) !important;
+  background-color: var(--color-muted-800);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+
 .card-player:hover {
   background-color: rgba(168, 85, 247, 0.1) !important;
   border-color: var(--color-purple-800) !important;
+}
+
+.card-player:hover .player-icon {
+  color: var(--color-purple-600);
+  border-color: var(--color-purple-600) !important;
+}
+
+.card-player:hover .player-label {
+  color: var(--color-purple-600);
+}
+
+.card-player .player-icon {
+  color: var(--color-muted-600);
+  border-color: var(--color-muted-600) !important;
   transition: all 0.3s ease-in-out;
+}
+
+.card-player .player-label {
+  color: var(--color-muted-600);
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Card Player Selected */
+.card-player.selected {
+  background-color: rgba(168, 85, 247, 0.1) !important;
+  border-color: var(--color-purple-800) !important;
+}
+
+.card-player.selected .player-icon {
+  color: var(--color-purple-600) !important;
+  border-color: var(--color-purple-600) !important;
+}
+
+.card-player.selected .player-label {
+  color: var(--color-purple-500) !important;
+}
+
+
+/* Game List */
+.game-item {
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1px solid var(--color-muted-600);
+  background-color: var(--color-muted-800);
+}
+
+.game-names {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.game-names .name {
+  font-weight: light;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  color: var(--color-muted-300);
+}
+
+.game-names .versus {
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--color-purple-500);
+  margin: 0 0.5em;
+}
+
+.game-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-muted-300);
+  font-size: 0.9rem;
+}
+
+.game-status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.status-badge {
+  font-size: 0.9em;
+  font-weight: 900;
+  font-family: 'Albert Sans';
+  color: var(--color-white);
+  padding: 0.2em 0.9rem;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  background: var(--color-green-500);
+  background: linear-gradient(to bottom, var(--color-green-500) 0%, var(--color-emerald-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
