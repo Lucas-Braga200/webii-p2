@@ -1,9 +1,26 @@
 moment.locale('pt');
 
+const playModal = new bootstrap.Modal(document.getElementById('playModal'));
+
+let idSelected = null;
+
 function createListItem(item) {
   let status = {
     'waiting': 'Esperando',
+    'started': 'Iniciado',
   };
+
+  let columnAction = '';
+
+  if (item.status == 'waiting') {
+    columnAction = `
+      <div class="col d-flex justify-content-end align-items-center">
+        <button type="submit" class="btn btn-primary play_buttons" data-room="${item.id}">
+          Jogar
+        </button>
+      </div>
+    `;
+  }
 
   return `
     <div class="row mb-2">
@@ -34,6 +51,7 @@ function createListItem(item) {
                   </div>
                 </div>
               </div>
+              ${columnAction}
             </div>
           </div>
         </div>
@@ -63,4 +81,15 @@ fetch('/api/play').then(games => games.json()).then(games => {
     let itens = games.map(game => createListItem(game)).join('');
     $('#quiz_list').html(itens);
   }
+}).finally(() => {
+  $('#quiz_modal_start').click(function() {
+    let name = $('#playerName').val();
+    util.post('/quiz', {name, id: idSelected});
+    playModal.hide();
+  });
+
+  $('.play_buttons').click(function() {
+    idSelected = $(this).data('room');
+    playModal.show();
+  });
 });

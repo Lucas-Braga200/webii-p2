@@ -38,11 +38,7 @@ $('#quiz_modal_start').click(function() {
     body.one = false;
   }
 
-  console.log(JSON.stringify(body));
-
-  fetch('/api/play', { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } }).then(game => {
-    console.log(game);
-  }).finally(() => {
+  fetch('/api/play', { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } }).finally(() => {
     playModal.hide();
   });
 });

@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { createGame, listGames } = require('../services/games');
+const { createGame, listGames, getGame, updateGame } = require('../services/games');
 
 router.post('/api/play', async (req, res) => {
   const { one, two, name } = req.body;
@@ -32,6 +32,20 @@ router.post('/api/play', async (req, res) => {
 
 router.get('/api/play', (req, res) => {
   return res.json(listGames());
+});
+
+router.post('/quiz', (req, res) => {
+  const { name, id } = req.body;
+
+  let game = getGame(id);
+
+  if (game.playerOne == null) {
+    updateGame(id, name, game.playerTwo, 'started');
+  } else {
+    updateGame(id, game.playerOne, name, 'started');
+  }
+
+  return res.render('quiz.hbs', { route: 'quiz' });
 });
 
 module.exports = router;
