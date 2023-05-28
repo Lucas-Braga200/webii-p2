@@ -32,7 +32,21 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  {{{_sections.body}}}
+  <div class="w-100 h-100 d-flex justify-content-center align-items-center layout-background">
+    <div class="row gx-0">
+      <div class="col-auto me-3" style="width: 250px">
+        <div class="side-bar">
+          <div class="side-bar-menu">
+            {{{_sections.menu}}}
+          </div>
+          {{{_sections.sidebar-footer}}}
+        </div>
+      </div>
+      <div class="col w-900px layout-main">
+        {{{_sections.body}}}
+      </div>
+    </div>
+  </div>
 
   <!-- Socket io -->
   <script

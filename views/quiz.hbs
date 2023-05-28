@@ -1,0 +1,106 @@
+{{!< main.hbs }}
+
+{{#contentFor "menu"}}
+  {{#ifEquals route 'list'}}
+    <a href="/list" class="menu-item active">
+      <i class="fa-solid fa-gamepad me-2 fa-fw"></i>
+      Partidas
+    </a>
+  {{else}}
+    <a href="/list" class="menu-item">
+      <i class="fa-solid fa-gamepad me-2 fa-fw"></i>
+      Partidas
+    </a>
+  {{/ifEquals}}
+{{/contentFor}}
+
+{{#contentFor "sidebar-footer"}}
+  <div class="punctuation">
+    <div>
+      <i class="fa-solid fa-user fa-fw"></i>
+      Player 2
+    </div>
+    300
+  </div>
+  <div class="punctuation">
+    <div>
+      <i class="fa-solid fa-user fa-fw"></i>
+      Player 1
+    </div>
+    100
+  </div>
+  <div class="stopwatch">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+      <i class="fa-regular fa-hourglass-half fa-3x"></i>
+      <span class="stopwatch-value ms-2">00:00</span>
+    </div>
+  </div>
+{{/contentFor}}
+
+{{#contentFor "body"}}
+  <div class="mb-2">
+    <h1 class="text-center text-purple-500 title-label">Quiztionário</h1>
+  </div>
+
+  <div class="row gx-0">
+    <div class="col">
+      <div class="w-100 answer">
+        Qual é a vantagem da técnica de programação paralela conhecida como "comunicação ponto a ponto" em comparação com a abordagem "comunicação em broadcast" ao lidar com tarefas aleatórias?
+      </div>
+    </div>
+  </div>
+
+  <div class="row gx-0 mt-2">
+    <div class="col">
+      <div class="w-100">
+        <div class="card-alternative">
+          <div class="answer-label">
+            Teste
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gx-0 mt-2">
+    <div class="col">
+      <div class="w-100">
+        <div class="card-alternative">
+          <div class="answer-label">
+            Teste
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gx-0 mt-2">
+    <div class="col">
+      <div class="w-100">
+        <div class="card-alternative">
+          <div class="answer-label">
+            Teste
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gx-0 mt-2">
+    <div class="col">
+      <div class="w-100">
+        <div class="card-alternative">
+          <div class="answer-label">
+            Teste
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <button class="answer-button">Responder</button>
+    </div>
+  </div>
+{{/contentFor}}

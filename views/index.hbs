@@ -1,48 +1,69 @@
 {{!< main.hbs }}
 
+{{#contentFor "menu"}}
+  {{#ifEquals route 'home'}}
+    <a href="/" class="menu-item mb-2 active">
+      <i class="fa-solid fa-house me-2 fa-fw"></i>
+      Início
+    </a>
+  {{else}}
+    <a href="/" class="menu-item mb-2">
+      <i class="fa-solid fa-house me-2 fa-fw"></i>
+      Início
+    </a>
+  {{/ifEquals}}
+
+  {{#ifEquals route 'list'}}
+    <a href="/list" class="menu-item active">
+      <i class="fa-solid fa-gamepad me-2 fa-fw"></i>
+      Partidas
+    </a>
+  {{else}}
+    <a href="/list" class="menu-item">
+      <i class="fa-solid fa-gamepad me-2 fa-fw"></i>
+      Partidas
+    </a>
+  {{/ifEquals}}
+{{/contentFor}}
+
 {{#contentFor "body"}}
-  <div class="w-100 h-100 d-flex justify-content-center align-items-center bg-muted-900">
-    <div class="w-900px">
-      <div class="mb-5">
-        <h1 class="text-center text-purple-500 title-label">Quiztionário</h1>
-        <p class="text-center subtitle-label">Selecione sua posição</p>
-      </div>
-      <div class="row gx-5">
-        <div class="col">
-          <div class="card-player p-5 rounded border selected">
-            <div class="d-flex flex-column align-items-center w-100">
-              <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
-                <i class="fa-solid fa-user fa-3x"></i>
-              </div>
-              <span class="player-label fw-bold mt-2 fs-3">
-                Player 1
-              </span>
-            </div>
+  <div class="mb-2">
+    <h1 class="text-center text-purple-500 title-label">Quiztionário</h1>
+  </div>
+  <div class="row gx-3">
+    <div class="col">
+      <div class="card-player selected">
+        <div class="d-flex flex-column align-items-center w-100">
+          <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
+            <i class="fa-solid fa-user fa-3x"></i>
           </div>
-        </div>
-        <div class="col">
-          <div class="card-player p-5 rounded border">
-            <div class="d-flex flex-column align-items-center w-100">
-              <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
-                <i class="fa-solid fa-user fa-3x"></i>
-              </div>
-              <span class="player-label fw-bold mt-2 fs-3">
-                Player 2
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="w-100 text-center mt-5 text-white">
-        <h2>
-          <div class="spinner-border text-purple-500" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-          <span>
-            Aguardando...
+          <span class="player-label fw-bold mt-2 fs-3">
+            Player 1
           </span>
-        </h2>
+        </div>
       </div>
     </div>
+    <div class="col">
+      <div class="card-player">
+        <div class="d-flex flex-column align-items-center w-100">
+          <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
+            <i class="fa-solid fa-user fa-3x"></i>
+          </div>
+          <span class="player-label fw-bold mt-2 fs-3">
+            Player 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 text-center mt-3 text-white">
+    <h2 class="mb-0 spinner-blue">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <span>
+        Aguardando...
+      </span>
+    </h2>
   </div>
 {{/contentFor}}
