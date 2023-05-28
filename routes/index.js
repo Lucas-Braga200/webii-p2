@@ -10,7 +10,7 @@ router.get('/list', (req, res, next) => {
   res.render('list.hbs', { route: 'list' });
 });
 
-router.get('/quiz', (req, res, next) => {
+router.get('/quiz/:id', (req, res, next) => {
   res.render('quiz.hbs', { route: 'quiz' });
 });
 

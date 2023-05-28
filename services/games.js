@@ -5,8 +5,8 @@ let games = [
   {
     id: '6e915dff-b4c8-480f-8238-96ab953d3945',
     playerOne: 'Teste',
-    playerTwo: null,
-    status: 'waiting',
+    playerTwo: 'Lucas',
+    status: 'started',
     startedAt: '2023-05-28T00:34:55-04:00'
   }
 ];
@@ -28,8 +28,6 @@ const createGame = (playerOne, playerTwo) => {
     status: 'waiting',
     startedAt: moment().format(),
   };
-
-  console.log(game);
 
   games.push(game);
 

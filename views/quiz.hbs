@@ -56,7 +56,9 @@
   <div class="stopwatch">
     <div class="d-flex flex-row justify-content-center align-items-center">
       <i class="fa-regular fa-hourglass-half fa-3x"></i>
-      <span class="stopwatch-value ms-2">00:00</span>
+      <span class="stopwatch-value ms-2">
+        <span id="minutes">05</span>:<span id="seconds">00</span>
+      </span>
     </div>
   </div>
 {{/contentFor}}
@@ -127,4 +129,8 @@
       <button class="answer-button">Responder</button>
     </div>
   </div>
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+  <script src="/js/quiz.js"></script>
 {{/contentFor}}
