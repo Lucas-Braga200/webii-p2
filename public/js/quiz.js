@@ -1,8 +1,10 @@
 let interval;
 
+let selectedAlternative;
+
 function startStopwatch() {
-  let minutes = 0;
-  let seconds = 3;
+  let minutes = 5;
+  let seconds = 0;
 
   function updateStopwatch() {
     seconds--;
@@ -10,13 +12,13 @@ function startStopwatch() {
       seconds = 59;
       minutes--;
     }
-    
+
     let minutesFormatted = minutes.toString().padStart(2, '0');
     let secondsFormatted = seconds.toString().padStart(2, '0');
-    
+
     $('#minutes').text(minutesFormatted);
     $('#seconds').text(secondsFormatted);
-    
+
     if (minutes === 0 && seconds === 0) {
       clearInterval(interval);
       Swal.fire({
@@ -24,6 +26,49 @@ function startStopwatch() {
         text: 'Infelizmente você não respondeu a tempo.',
         icon: 'error',
         confirmButtonText: 'Continuar'
+      }).then(() => {
+        socket.emit('answerQuestion', { room, questionId: null, socketId }, response => {  
+          $('#quiz_answer').html(`
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          `);
+          $('#first_alternative').html(`
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          `);
+  
+          $('#second_alternative').html(`
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          `);
+  
+          $('#third_alternative').html(`
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          `);
+  
+          $('#fourth_alternative').html(`
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          `);
+  
+          $('#quiz_answer_button').attr('disabled');
+        });
       });
     }
   }
@@ -31,4 +76,14 @@ function startStopwatch() {
   interval = setInterval(updateStopwatch, 1000);
 }
 
-startStopwatch();
+function finishStopwatch () {
+  clearInterval(interval);
+}
+
+$('.card-alternative').click(function() {
+  selectedAlternative = $(this);
+
+  $('.card-alternative').removeClass('selected');
+
+  $(this).addClass('selected');
+});

@@ -8,6 +8,7 @@ function createListItem(item) {
   let status = {
     'waiting': 'Esperando',
     'started': 'Iniciado',
+    'finished': 'Concluído',
   };
 
   let columnAction = '';

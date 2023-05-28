@@ -42,6 +42,12 @@ const updateGame = (id, playerOne, playerTwo, status) => {
   games[gameIndex].status = status;
 };
 
+const updateStatusGame = (id, status) => {
+  let gameIndex = games.findIndex(game => game.id == id);
+
+  games[gameIndex].status = status;
+};
+
 const getGame = (id) => {
   return games.find(game => game.id == id);
 };
@@ -50,4 +56,4 @@ const listGames = () => {
   return games;
 };
 
-module.exports = { createGame, updateGame, getGame, listGames };
+module.exports = { createGame, updateGame, getGame, listGames, updateStatusGame };

@@ -39,20 +39,7 @@
 {{/contentFor}}
 
 {{#contentFor "sidebar-footer"}}
-  <div class="punctuation">
-    <div>
-      <i class="fa-solid fa-user fa-fw"></i>
-      Player 2
-    </div>
-    300
-  </div>
-  <div class="punctuation">
-    <div>
-      <i class="fa-solid fa-user fa-fw"></i>
-      Player 1
-    </div>
-    100
-  </div>
+  <div id="punctuation_container"></div>
   <div class="stopwatch">
     <div class="d-flex flex-row justify-content-center align-items-center">
       <i class="fa-regular fa-hourglass-half fa-3x"></i>
@@ -68,20 +55,12 @@
     <h1 class="text-center text-purple-500 title-label">Quiztionário</h1>
   </div>
 
-  <div class="row gx-0">
+  <div class="row gx-0" data-room="{{ id }}" data-user="{{ user }}">
     <div class="col">
-      <div class="w-100 answer">
-        Qual é a vantagem da técnica de programação paralela conhecida como "comunicação ponto a ponto" em comparação com a abordagem "comunicação em broadcast" ao lidar com tarefas aleatórias?
-      </div>
-    </div>
-  </div>
-
-  <div class="row gx-0 mt-2">
-    <div class="col">
-      <div class="w-100">
-        <div class="card-alternative">
-          <div class="answer-label">
-            Teste
+      <div id="quiz_answer" class="w-100 answer">
+        <div class="w-100 d-flex justify-content-center answer-spinner">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </div>
@@ -91,9 +70,13 @@
   <div class="row gx-0 mt-2">
     <div class="col">
       <div class="w-100">
-        <div class="card-alternative">
+        <div id="first_alternative" class="card-alternative">
           <div class="answer-label">
-            Teste
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -103,9 +86,13 @@
   <div class="row gx-0 mt-2">
     <div class="col">
       <div class="w-100">
-        <div class="card-alternative">
+        <div id="second_alternative" class="card-alternative">
           <div class="answer-label">
-            Teste
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -115,9 +102,29 @@
   <div class="row gx-0 mt-2">
     <div class="col">
       <div class="w-100">
-        <div class="card-alternative">
+        <div id="third_alternative" class="card-alternative">
           <div class="answer-label">
-            Teste
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gx-0 mt-2">
+    <div class="col">
+      <div class="w-100">
+        <div id="fourth_alternative" class="card-alternative">
+          <div class="answer-label">
+            <div class="w-100 d-flex justify-content-center answer-spinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -126,11 +133,12 @@
 
   <div class="row mt-2">
     <div class="col">
-      <button class="answer-button">Responder</button>
+      <button id="quiz_answer_button" class="answer-button" disabled="disabled">Responder</button>
     </div>
   </div>
 {{/contentFor}}
 
 {{#contentFor "scripts"}}
   <script src="/js/quiz.js"></script>
+  <script src="/js/quiz-socket.js"></script>
 {{/contentFor}}
