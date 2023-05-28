@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { createGame } = require('../services/games');
+const { createGame, listGames } = require('../services/games');
 
 router.post('/api/play', async (req, res) => {
   const { one, two, name } = req.body;
@@ -28,6 +28,10 @@ router.post('/api/play', async (req, res) => {
   }
 
   return res.json(game);
+});
+
+router.get('/api/play', (req, res) => {
+  return res.json(listGames());
 });
 
 module.exports = router;
