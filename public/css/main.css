@@ -366,18 +366,27 @@ html, body {
   padding: 3em;
 }
 
-.card-player:hover .player-icon {
-  color: var(--color-blue-600);
+.card-player.disabled .player-icon {
+  color: var(--color-muted-400) !important;
+  border-color: var(--color-muted-400) !important;
+}
+
+.card-player.disabled .player-label {
+  color: var(--color-muted-400) !important;
+}
+
+.card-player:not(.disabled):hover .player-icon {
+  color: var(--color-blue-600) !important;
   border-color: var(--color-blue-600) !important;
 }
 
-.card-player:hover .player-label {
-  color: var(--color-blue-600);
+.card-player:not(.disabled):hover .player-label {
+  color: var(--color-blue-600) !important;
 }
 
 .card-player .player-icon {
   color: var(--color-muted-400);
-  border-color: var(--color-muted-400) !important;
+  border-color: var(--color-muted-400);
   transition: all 0.3s ease-in-out;
 }
 

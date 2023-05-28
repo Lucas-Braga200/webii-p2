@@ -2,12 +2,12 @@
 
 {{#contentFor "menu"}}
   {{#ifEquals route 'home'}}
-    <a href="/" class="menu-item mb-2 active">
+    <a href="/" class="menu-item active">
       <i class="fa-solid fa-house me-2 fa-fw"></i>
       Início
     </a>
   {{else}}
-    <a href="/" class="menu-item mb-2">
+    <a href="/" class="menu-item">
       <i class="fa-solid fa-house me-2 fa-fw"></i>
       Início
     </a>
@@ -43,7 +43,7 @@
     <h1 class="text-center text-purple-500 title-label">Quiztionário</h1>
   </div>
   <div class="row gx-3">
-    <div class="col">
+    <div class="col quiz_player_select" data-player="one">
       <div class="card-player">
         <div class="d-flex flex-column align-items-center w-100">
           <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col quiz_player_select" data-player="two">
       <div class="card-player">
         <div class="d-flex flex-column align-items-center w-100">
           <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="w-100 text-center mt-3">
-    <h2 class="gray-label">Selecione um player</h2>
+    <h2 id="select-label" class="gray-label">Selecione um player</h2>
     <h2 id="quiz_room_loading" class="mb-0 spinner-blue d-none">
       <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
@@ -79,4 +79,31 @@
       </span>
     </h2>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="playModalTitle">Insira seu nome para iniciar uma partida.</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="playerName" class="form-label">Nome do jogador</label>
+            <input type="text" class="form-control" id="playerName" aria-describedby="playerNameHelp">
+            <div id="playerNameHelp" class="form-text">Insira um nome válido.</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button id="quiz_modal_start" type="button" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+  <script src="js/play.js"></script>
 {{/contentFor}}
