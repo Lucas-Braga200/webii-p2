@@ -366,10 +366,6 @@ html, body {
   padding: 3em;
 }
 
-.card-player:hover {
-  background-color: rgba(59, 130, 246, 0.1) !important;
-}
-
 .card-player:hover .player-icon {
   color: var(--color-blue-600);
   border-color: var(--color-blue-600) !important;
@@ -392,10 +388,6 @@ html, body {
 
 
 /* Card Player Selected */
-.card-player.selected {
-  background-color: rgba(59, 130, 246, 0.1) !important;
-}
-
 .card-player.selected .player-icon {
   color: var(--color-blue-600) !important;
   border-color: var(--color-blue-600) !important;
@@ -582,5 +574,9 @@ html, body {
 }
 
 .spinner-blue {
+  color: var(--color-muted-400);
+}
+
+.gray-label {
   color: var(--color-muted-400);
 }

@@ -3,7 +3,7 @@ const { engine } = require('express-handlebars');
 const http = require('http');
 const path = require('path');
 const { Server } = require('socket.io');
-const helpers = require('./utils/helpers');
+const helpers = require('../utils/helpers');
 
 const indexRouter = require('../routes/index.js');
 

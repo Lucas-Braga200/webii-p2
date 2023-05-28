@@ -1,6 +1,18 @@
 {{!< main.hbs }}
 
 {{#contentFor "menu"}}
+  {{#ifEquals route 'home'}}
+    <a href="/" class="menu-item mb-2 active">
+      <i class="fa-solid fa-house me-2 fa-fw"></i>
+      Início
+    </a>
+  {{else}}
+    <a href="/" class="menu-item mb-2">
+      <i class="fa-solid fa-house me-2 fa-fw"></i>
+      Início
+    </a>
+  {{/ifEquals}}
+
   {{#ifEquals route 'list'}}
     <a href="/list" class="menu-item active">
       <i class="fa-solid fa-gamepad me-2 fa-fw"></i>
@@ -10,6 +22,18 @@
     <a href="/list" class="menu-item">
       <i class="fa-solid fa-gamepad me-2 fa-fw"></i>
       Partidas
+    </a>
+  {{/ifEquals}}
+
+  {{#ifEquals route 'play'}}
+    <a href="/play" class="menu-item active">
+      <i class="fa-solid fa-play me-2 fa-fw"></i>
+      Jogar
+    </a>
+  {{else}}
+    <a href="/play" class="menu-item">
+      <i class="fa-solid fa-play me-2 fa-fw"></i>
+      Jogar
     </a>
   {{/ifEquals}}
 {{/contentFor}}

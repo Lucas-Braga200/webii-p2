@@ -24,6 +24,18 @@
       Partidas
     </a>
   {{/ifEquals}}
+
+  {{#ifEquals route 'play'}}
+    <a href="/play" class="menu-item active">
+      <i class="fa-solid fa-play me-2 fa-fw"></i>
+      Jogar
+    </a>
+  {{else}}
+    <a href="/play" class="menu-item">
+      <i class="fa-solid fa-play me-2 fa-fw"></i>
+      Jogar
+    </a>
+  {{/ifEquals}}
 {{/contentFor}}
 
 {{#contentFor "body"}}

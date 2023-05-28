@@ -24,46 +24,24 @@
       Partidas
     </a>
   {{/ifEquals}}
+
+  {{#ifEquals route 'play'}}
+    <a href="/play" class="menu-item active">
+      <i class="fa-solid fa-play me-2 fa-fw"></i>
+      Jogar
+    </a>
+  {{else}}
+    <a href="/play" class="menu-item">
+      <i class="fa-solid fa-play me-2 fa-fw"></i>
+      Jogar
+    </a>
+  {{/ifEquals}}
 {{/contentFor}}
 
 {{#contentFor "body"}}
-  <div class="mb-2">
+  <div>
     <h1 class="text-center text-purple-500 title-label">Quiztionário</h1>
-  </div>
-  <div class="row gx-3">
-    <div class="col">
-      <div class="card-player selected">
-        <div class="d-flex flex-column align-items-center w-100">
-          <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
-            <i class="fa-solid fa-user fa-3x"></i>
-          </div>
-          <span class="player-label fw-bold mt-2 fs-3">
-            Player 1
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card-player">
-        <div class="d-flex flex-column align-items-center w-100">
-          <div class="player-icon w-100px h-100px d-flex justify-content-center align-items-center rounded-circle border border-4">
-            <i class="fa-solid fa-user fa-3x"></i>
-          </div>
-          <span class="player-label fw-bold mt-2 fs-3">
-            Player 2
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="w-100 text-center mt-3 text-white">
-    <h2 class="mb-0 spinner-blue">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <span>
-        Aguardando...
-      </span>
-    </h2>
+    <h2 class="text-center subtitle-label">Teste seu conhecimento!</h1>
+    <h3 class="text-center subtitle-label mt-4">802.266</h3>
   </div>
 {{/contentFor}}
