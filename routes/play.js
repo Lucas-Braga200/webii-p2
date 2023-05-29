@@ -39,13 +39,15 @@ router.post('/quiz', (req, res) => {
 
   let game = getGame(id);
 
-  if (game.playerOne == null) {
-    updateGame(id, name, game.playerTwo, 'started');
-  } else {
-    updateGame(id, game.playerOne, name, 'started');
+  if (req.body.create == null) {
+    if (game.playerOne == null) {
+      updateGame(id, name, game.playerTwo, 'started');
+    } else {
+      updateGame(id, game.playerOne, name, 'started');
+    }
   }
 
-  return res.render('quiz.hbs', { route: 'quiz' });
+  return res.render('quiz.hbs', { route: 'quiz', id: id, user: name });
 });
 
 module.exports = router;

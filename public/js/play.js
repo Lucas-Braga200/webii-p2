@@ -38,7 +38,10 @@ $('#quiz_modal_start').click(function() {
     body.one = false;
   }
 
-  fetch('/api/play', { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } }).finally(() => {
-    playModal.hide();
-  });
+  fetch('/api/play', { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } })
+    .then(response => response.json())
+    .then(response => {
+      playModal.hide();
+      util.post('/quiz', {id: response.id, name, create: true});
+    });
 });
